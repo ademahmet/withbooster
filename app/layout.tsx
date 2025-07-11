@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col bg-black text-white font-sans">
+      <body className="min-h-screen flex flex-col bg-gradient-to-br from-[#0a0a0a] via-[#2d13aa] to-[#373643] text-white font-sans">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
