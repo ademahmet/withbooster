@@ -14,37 +14,29 @@ export default function Header() {
         {/* Animated background with brand colors */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#2d13aa]/8 via-[#1a237e]/12 to-[#2d13aa]/8 animate-pulse"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#2d13aa]/5 to-transparent animate-pulse" style={{ animationDuration: '4s' }}></div>
-        
         {/* Shimmer effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 -translate-x-full animate-pulse" style={{ animationDuration: '6s' }}></div>
-        
         {/* Glass effect overlay with brand colors */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#2d13aa]/5 to-[#1a237e]/8 rounded-full"></div>
-        
         {/* Subtle border glow */}
         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#2d13aa]/20 via-[#1a237e]/30 to-[#2d13aa]/20 blur-sm"></div>
-        
         {/* Content */}
         <div className="relative z-10 flex items-center justify-between gap-10 w-full">
           {/* Logo with lighting effect */}
           <Link href="/" className="flex items-center relative group" style={{ minWidth: 56 }}>
             {/* Logo background glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#2d13aa]/30 via-[#1a237e]/40 to-[#2d13aa]/30 rounded-2xl blur-md scale-110 group-hover:scale-125 transition-all duration-500"></div>
-            
             {/* Logo container with lighting */}
             <div className="relative bg-gradient-to-r from-white/20 via-white/30 to-white/20 backdrop-blur-sm rounded-2xl p-2 border border-white/30 shadow-lg group-hover:shadow-xl transition-all duration-300">
               {/* Inner glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#2d13aa]/20 via-[#1a237e]/30 to-[#2d13aa]/20 rounded-xl blur-sm"></div>
-              
               {/* Logo image */}
               <div className="relative z-10">
                 <Image src="/logo.png" alt="withbooster Logo" width={120} height={120} priority className="drop-shadow-lg" />
               </div>
-              
               {/* Shimmer overlay on logo */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-xl"></div>
             </div>
-            
             <span className="sr-only">withbooster</span>
           </Link>
           {/* Navigation */}

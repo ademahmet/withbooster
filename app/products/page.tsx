@@ -5,7 +5,7 @@ import Link from "next/link";
 const products = [
   {
     name: "Roomia",
-    color: "#5800ff",
+    color: "#742eff",
     logo: "/Roomia_logo.png",
     description: "Roomia turns a single photo into personalised layouts, colour schemes and furniture suggestions giving you a clear design vision in seconds.",
     website: "#",
@@ -15,7 +15,7 @@ const products = [
   },
   {
     name: "Wikiz",
-    color: "#283389",
+    color: "#ffffff",
     logo: "/wikiz_logo.png",
     description: "Wikiz is an entertaining and educational game.",
     website: "#",
@@ -25,7 +25,7 @@ const products = [
   },
   {
     name: "CarStage",
-    color: "#373643",
+    color: "#942626",
     logo: "/carstage_logo.png",
     description: "Accelerate sales and increase viewership with CarStage AI-powered solutions. You can also do fun things if you want :)",
     website: "#",
@@ -39,8 +39,17 @@ const products = [
 function ProductSection({ product }: { product: typeof products[0] }) {
   return (
     <section
-      className="min-h-screen w-screen h-full flex items-center justify-center relative overflow-hidden bg-black"
+      className="min-h-screen w-screen h-full flex flex-col items-center justify-center relative overflow-hidden bg-black"
     >
+      {/* Ürün ismi sayfanın en üstünde */}
+      <div className="w-full flex justify-center pt-16 pb-8">
+        <h2
+          className="font-extrabold text-5xl md:text-6xl tracking-tight drop-shadow-lg text-center select-none"
+          style={{ color: product.color, fontFamily: 'Inter, DM Sans, Arial, sans-serif', letterSpacing: '0.01em', textShadow: `0 2px 24px ${product.color}55` }}
+        >
+          {product.name}
+        </h2>
+      </div>
       {/* Subtle animated background */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#2d13aa]/5 via-[#1a237e]/8 to-[#2d13aa]/5 animate-pulse" style={{ animationDuration: '10s' }}></div>
       {/* Modern grid pattern */}
@@ -57,14 +66,14 @@ function ProductSection({ product }: { product: typeof products[0] }) {
         <div className="flex flex-col flex-1 justify-center items-start max-w-[400px] order-2 lg:order-1">
           <div className="flex flex-row items-center gap-6 mb-8">
             <div className="relative flex-shrink-0">
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-white/10 blur-xl z-0"></div>
+              {/* Modern, küçük ve yumuşak glow sadece logonun altına */}
+              <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 w-20 h-6 rounded-full bg-white opacity-40 blur-xl z-0" style={{ boxShadow: `0 4px 24px 0 ${product.color}44` }} />
               <Image src={product.logo} alt={product.name + ' logo'} width={100} height={100} className="relative z-10" />
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white font-sans">{product.name}</h2>
           </div>
           <p className="mb-8 text-lg text-white/80 leading-relaxed font-sans">{product.description}</p>
           <Link href={product.website} target="_blank">
-            <button className="px-8 py-4 rounded-lg bg-[#2d13aa]/20 backdrop-blur-md text-white font-medium text-base shadow-lg hover:bg-[#2d13aa]/30 transition-all duration-300 border border-[#2d13aa]/30 font-sans">
+            <button className="px-8 py-4 rounded-lg" style={{ background: `${product.color}33`, borderColor: product.color, color: product.color === '#ffffff' ? '#22223a' : '#fff', borderWidth: 2, borderStyle: 'solid' }}>
               Visit Website
             </button>
           </Link>
@@ -73,7 +82,7 @@ function ProductSection({ product }: { product: typeof products[0] }) {
         {/* Orta: Büyük PC görseli - Sadece küçük bir glow ile, hareket yok */}
         <div className="flex flex-1 justify-center items-center relative order-1 lg:order-2 min-w-[800px] max-w-[1000px]">
           {/* Küçük glow efekti */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[320px] rounded-full bg-[#2d13aa]/30 blur-3xl z-0 pointer-events-none"></div>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[320px] rounded-full" style={{ background: `${product.color}33` }}></div>
           {/* PC görseli */}
           <div className="relative z-10">
             <Image 
