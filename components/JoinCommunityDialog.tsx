@@ -7,7 +7,6 @@ export default function JoinCommunityDialog({ open, setOpen }: { open: boolean, 
   const [fullName, setFullName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [submitted, setSubmitted] = React.useState(false);
-  const [error, setError] = React.useState("");
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -73,7 +72,6 @@ export default function JoinCommunityDialog({ open, setOpen }: { open: boolean, 
                 value={email}
                 onChange={e => setEmail(e.target.value)}
               />
-              {error && <span className="text-red-500 text-sm text-center">{error}</span>}
               <Button type="submit" className="bg-[#2d13aa] text-white rounded-full py-3 text-base font-semibold shadow-lg hover:bg-[#1a237e] transition-all w-full mt-2">Join</Button>
             </form>
           </>

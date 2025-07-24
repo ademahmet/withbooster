@@ -1,11 +1,9 @@
 'use client';
 
-import Link from "next/link";
 import Products from "./products/page";
 import About from "./about/page";
 import Contact from "./contact/page";
 import { useRef, useEffect } from "react";
-import Image from "next/image";
 
 function useFadeInOnScroll(ref: React.RefObject<HTMLElement | null>, threshold = 0.2) {
   useEffect(() => {
