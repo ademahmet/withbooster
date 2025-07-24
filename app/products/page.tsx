@@ -7,6 +7,7 @@ const products = [
     name: "Roomia",
     color: "#742eff",
     logo: "/Roomia_logo.png",
+    video: "/roomia.mp4",
     description: "Roomia turns a single photo into personalised layouts, colour schemes and furniture suggestions giving you a clear design vision in seconds.",
     website: "#",
     stats: {
@@ -17,6 +18,7 @@ const products = [
     name: "Wikiz",
     color: "#ffffff",
     logo: "/wikiz_logo.png",
+    video: "/wikiz.mp4",
     description: "Wikiz is an entertaining and educational game.",
     website: "#",
     stats: {
@@ -27,6 +29,7 @@ const products = [
     name: "CarStage",
     color: "#942626",
     logo: "/carstage_logo.png",
+    video: "/carstage.mp4",
     description: "Accelerate sales and increase viewership with CarStage AI-powered solutions. You can also do fun things if you want :)",
     website: "#",
     stats: {
@@ -36,92 +39,118 @@ const products = [
   }
 ];
 
+function ModernTitle({ children, color, shimmerColor, size = 'md' }: { children: React.ReactNode; color?: string; shimmerColor?: string; size?: 'sm' | 'md' | 'lg' }) {
+  const sizeClass = size === 'lg' ? 'text-3xl md:text-5xl' : size === 'sm' ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl';
+  return (
+    <div className="flex flex-col items-center justify-center mb-6 pt-32" style={{ width: 'fit-content', margin: '0 auto' }}>
+      <h2
+        className={`${sizeClass} font-semibold text-center select-none tracking-tight relative z-10 px-8 shimmer-text`}
+        style={{
+          color: color || '#2d13aa',
+          fontFamily: 'Geist, Inter, DM Sans, Arial, sans-serif',
+          letterSpacing: '0.01em',
+          overflow: 'hidden',
+        }}
+      >
+        {children}
+        <span className="shimmer-effect" style={{ background: shimmerColor ? `linear-gradient(120deg, transparent 0%, ${shimmerColor} 40%, transparent 60%)` : undefined }} />
+      </h2>
+      <style jsx>{`
+        .shimmer-text {
+          position: relative;
+          display: inline-block;
+        }
+        .shimmer-effect {
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: linear-gradient(120deg, transparent 0%, #fff 40%, transparent 60%);
+          opacity: 0.5;
+          mix-blend-mode: lighten;
+          animation: shimmer-move 2.5s infinite linear;
+          pointer-events: none;
+        }
+        @keyframes shimmer-move {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+function ModernDownloadBadge({ color, text }: { color: string; text: string }) {
+  return (
+    <div className="relative flex flex-col items-center mt-6 select-none">
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-10 rounded-full" style={{ background: `${color}22` }} />
+      <div className="relative flex items-center gap-2 px-7 py-2 rounded-full font-bold text-lg bg-white/10 backdrop-blur-md shadow border border-white/20 text-white">
+        <svg className="w-5 h-5 text-white/80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" /></svg>
+        <span>{text}</span>
+      </div>
+    </div>
+  );
+}
+
+function ModernVisitButton({ url, color, label = 'Visit Website' }: { url: string; color: string; label?: string }) {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-4 inline-flex items-center gap-2 px-7 py-2 rounded-full font-semibold text-base shadow border border-white/20 bg-white/10 backdrop-blur-md text-white transition hover:scale-105 hover:bg-white/20"
+      style={{ color }}
+    >
+      <svg className="w-4 h-4 text-white/80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M14 3h7v7m0 0L10 21l-7-7 11-11z" /></svg>
+      {label}
+    </a>
+  );
+}
+
 function ProductSection({ product }: { product: typeof products[0] }) {
   return (
     <section
       className="min-h-screen w-screen h-full flex flex-col items-center justify-center relative overflow-hidden bg-black"
     >
-      {/* Ürün ismi sayfanın en üstünde */}
-      <div className="w-full flex justify-center pt-16 pb-8">
-        <h2
-          className="font-extrabold text-5xl md:text-6xl tracking-tight drop-shadow-lg text-center select-none"
-          style={{ color: product.color, fontFamily: 'Inter, DM Sans, Arial, sans-serif', letterSpacing: '0.01em', textShadow: `0 2px 24px ${product.color}55` }}
-        >
-          {product.name}
-        </h2>
+      <div className="flex flex-col items-center justify-center mb-2 pt-24">
+        <Image
+          src={product.logo}
+          alt={product.name + ' logo'}
+          width={160}
+          height={160}
+          className="rounded-2xl shadow-lg border-4 border-white/10 bg-white/10 p-2 object-contain scale-110"
+          style={{ background: 'linear-gradient(120deg, #fff2 0%, transparent 100%)' }}
+        />
       </div>
-      {/* Subtle animated background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#2d13aa]/5 via-[#1a237e]/8 to-[#2d13aa]/5 animate-pulse" style={{ animationDuration: '10s' }}></div>
-      {/* Modern grid pattern */}
-      <div className="absolute inset-0 opacity-3 pointer-events-none">
-        <div className="w-full h-full" style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`,
-          backgroundSize: '100px 100px'
-        }}></div>
+      {/* Modern bölme */}
+      <div className="w-full flex justify-center my-4">
+        <div className="h-1 w-40 rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent blur-sm opacity-80" />
       </div>
-
-      {/* İçerik: PC odaklı modern layout */}
-      <div className="flex flex-col lg:flex-row w-full max-w-[1600px] mx-auto items-center justify-between gap-12 px-8 lg:px-16 relative z-10">
-        {/* Sol: Logo ve ürün bilgileri */}
-        <div className="flex flex-col flex-1 justify-center items-start max-w-[400px] order-2 lg:order-1">
-          <div className="flex flex-row items-center gap-6 mb-8">
-            <div className="relative flex-shrink-0">
-              {/* Modern, küçük ve yumuşak glow sadece logonun altına */}
-              <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 w-20 h-6 rounded-full bg-white opacity-40 blur-xl z-0" style={{ boxShadow: `0 4px 24px 0 ${product.color}44` }} />
-              <Image src={product.logo} alt={product.name + ' logo'} width={100} height={100} className="relative z-10" />
-            </div>
-          </div>
-          <p className="mb-8 text-lg text-white/80 leading-relaxed font-sans">{product.description}</p>
-          <Link href={product.website} target="_blank">
-            <button className="px-8 py-4 rounded-lg" style={{ background: `${product.color}33`, borderColor: product.color, color: product.color === '#ffffff' ? '#22223a' : '#fff', borderWidth: 2, borderStyle: 'solid' }}>
-              Visit Website
-            </button>
-          </Link>
+      {/* Ortada çok büyük video/görsel ve parıltı */}
+      <div className="flex flex-col items-center justify-center w-full max-w-7xl mx-auto relative z-10">
+        {/* Daha modern glow: çok katmanlı ve gradientli */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0">
+          <div className="w-[1200px] h-[700px] rounded-full" style={{ background: `radial-gradient(ellipse at center, ${product.color}33 0%, transparent 80%)`, filter: 'blur(100px)', opacity: 0.7 }} />
+          <div className="w-[900px] h-[400px] rounded-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ background: `radial-gradient(ellipse at center, #fff2 0%, transparent 80%)`, filter: 'blur(60px)', opacity: 0.5 }} />
         </div>
-        
-        {/* Orta: Büyük PC görseli - Sadece küçük bir glow ile, hareket yok */}
-        <div className="flex flex-1 justify-center items-center relative order-1 lg:order-2 min-w-[800px] max-w-[1000px]">
-          {/* Küçük glow efekti */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[320px] rounded-full" style={{ background: `${product.color}33` }}></div>
-          {/* PC görseli */}
-          <div className="relative z-10">
-            <Image 
-              src="/pc.png" 
-              alt={product.name + ' screenshot'} 
-              width={700} 
-              height={420} 
-              className="relative z-10 transition-transform duration-500 will-change-transform"
+        <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10 bg-white/5 backdrop-blur-xl" style={{ width: 980, height: 540 }}>
+          {product.video ? (
+            <video
+              src={product.video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
             />
-          </div>
-        </div>
-        
-        {/* Sağ: İstatistikler */}
-        <div className="flex flex-col flex-1 items-center justify-center gap-6 max-w-[300px] order-3">
-          {product.name === "Roomia" && (
-            <div className="flex flex-col items-center justify-center w-full">
-              <div className="text-xs font-medium uppercase mb-2 text-white/60 tracking-wider font-sans">Active Users</div>
-              <div className="text-3xl font-bold mb-1 text-white font-sans">{product.stats.users}</div>
-            </div>
-          )}
-          {product.name === "Wikiz" && (
-            <div className="flex flex-col items-center justify-center w-full">
-              <div className="text-xs font-medium uppercase mb-2 text-white/60 tracking-wider font-sans">Active Users</div>
-              <div className="text-3xl font-bold mb-1 text-white font-sans">{product.stats.users}</div>
-            </div>
-          )}
-          {product.name === "CarStage" && (
-            <div className="flex flex-col items-center justify-center w-full gap-2">
-              <div>
-                <div className="text-xs font-medium uppercase mb-1 text-white/60 tracking-wider font-sans">Active Single Users</div>
-                <div className="text-2xl font-bold mb-2 text-white font-sans">{product.stats.singleUsers}</div>
-              </div>
-              <div>
-                <div className="text-xs font-medium uppercase mb-1 text-white/60 tracking-wider font-sans">Active Partnerships</div>
-                <div className="text-2xl font-bold mb-2 text-white font-sans">{product.stats.partnerships}</div>
-              </div>
-            </div>
+          ) : (
+            <Image src={product.logo} alt={product.name + ' logo'} width={980} height={540} className="w-full h-full object-cover" />
           )}
         </div>
+        <ModernDownloadBadge color={product.color} text={product.name === 'CarStage' ? '200+ active users' : product.name === 'Wikiz' ? '1000+ download' : '100+ download'} />
+        <ModernVisitButton url={product.website} color={product.color} />
+      </div>
+      {/* Açıklama */}
+      <div className="mt-6 text-base md:text-lg text-white/80 leading-relaxed font-sans text-center max-w-xl mx-auto">
+        {product.description}
       </div>
     </section>
   );
@@ -130,12 +159,62 @@ function ProductSection({ product }: { product: typeof products[0] }) {
 export default function Products() {
   return (
     <div className="w-screen min-h-screen bg-black">
+      {/* Başlık kaldırıldı */}
+      {/* Ürünler */}
       {products.map((p) => (
         <ProductSection
           key={p.name}
           product={p}
         />
       ))}
+      {/* Shop Bölümü */}
+      <section className="w-full flex flex-col items-center justify-center py-32 bg-black">
+        <div className="flex flex-col items-center justify-center mb-16">
+          <Image
+            src="/etsy.png"
+            alt="Etsy Logo"
+            width={110}
+            height={110}
+            className="object-contain drop-shadow-lg"
+          />
+        </div>
+        <div className="flex flex-row items-end justify-center gap-32 w-full max-w-7xl mx-auto">
+          {/* İlk PC (video) */}
+          <div className="relative flex flex-col items-center">
+            {/* Sadece video etrafında glow */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[420px] rounded-full pointer-events-none" style={{ background: `#D5641C22`, filter: 'blur(70px)' }} />
+            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10 bg-white/5 backdrop-blur-xl" style={{ width: 520, height: 300 }}>
+              <video
+                src="/withbooster_etsy.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <ModernDownloadBadge color="#D5641C" text="5+ download" />
+            <ModernVisitButton url="https://www.etsy.com/shop/withbooster" color="#D5641C" label="Visit Shop" />
+          </div>
+          {/* İkinci PC (video) */}
+          <div className="relative flex flex-col items-center">
+            {/* Sadece video etrafında glow */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[420px] rounded-full pointer-events-none" style={{ background: `#D5641C22`, filter: 'blur(70px)' }} />
+            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10 bg-white/5 backdrop-blur-xl" style={{ width: 520, height: 300 }}>
+              <video
+                src="/kırtasiye_etsy.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <ModernDownloadBadge color="#D5641C" text="5+ download" />
+            <ModernVisitButton url="https://www.etsy.com/shop/withbooster" color="#D5641C" label="Visit Shop" />
+          </div>
+        </div>
+      </section>
     </div>
   );
 } 

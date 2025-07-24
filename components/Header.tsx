@@ -42,7 +42,7 @@ export default function Header() {
           {/* Navigation */}
           <nav className="flex-1 flex justify-center gap-10">
             <Link href="/products" className="hover:text-[#2d13aa] font-semibold transition-all duration-300 hover:scale-105 relative group text-white/90 hover:text-white">
-              Products
+              Products and Shop
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#2d13aa] to-[#1a237e] transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link href="/about" className="hover:text-[#2d13aa] font-semibold transition-all duration-300 hover:scale-105 relative group text-white/90 hover:text-white">
