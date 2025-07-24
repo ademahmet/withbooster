@@ -130,7 +130,7 @@ function ProductSection({ product }: { product: typeof products[0] }) {
 export default function Products() {
   return (
     <div className="w-screen min-h-screen bg-black">
-      {products.map((p, _i) => (
+      {products.map((p) => (
         <ProductSection
           key={p.name}
           product={p}
