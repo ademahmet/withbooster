@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 
 const products = [
   {
@@ -38,45 +37,6 @@ const products = [
     }
   }
 ];
-
-function ModernTitle({ children, color, shimmerColor, size = 'md' }: { children: React.ReactNode; color?: string; shimmerColor?: string; size?: 'sm' | 'md' | 'lg' }) {
-  const sizeClass = size === 'lg' ? 'text-3xl md:text-5xl' : size === 'sm' ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl';
-  return (
-    <div className="flex flex-col items-center justify-center mb-6 pt-32" style={{ width: 'fit-content', margin: '0 auto' }}>
-      <h2
-        className={`${sizeClass} font-semibold text-center select-none tracking-tight relative z-10 px-8 shimmer-text`}
-        style={{
-          color: color || '#2d13aa',
-          fontFamily: 'Geist, Inter, DM Sans, Arial, sans-serif',
-          letterSpacing: '0.01em',
-          overflow: 'hidden',
-        }}
-      >
-        {children}
-        <span className="shimmer-effect" style={{ background: shimmerColor ? `linear-gradient(120deg, transparent 0%, ${shimmerColor} 40%, transparent 60%)` : undefined }} />
-      </h2>
-      <style jsx>{`
-        .shimmer-text {
-          position: relative;
-          display: inline-block;
-        }
-        .shimmer-effect {
-          position: absolute;
-          top: 0; left: 0; right: 0; bottom: 0;
-          background: linear-gradient(120deg, transparent 0%, #fff 40%, transparent 60%);
-          opacity: 0.5;
-          mix-blend-mode: lighten;
-          animation: shimmer-move 2.5s infinite linear;
-          pointer-events: none;
-        }
-        @keyframes shimmer-move {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-      `}</style>
-    </div>
-  );
-}
 
 function ModernDownloadBadge({ color, text }: { color: string; text: string }) {
   return (
