@@ -107,6 +107,12 @@ function ProductSection({ product }: { product: typeof products[0] }) {
         </div>
         <ModernDownloadBadge color={product.color} text={product.name === 'CarStage' ? '200+ active users' : product.name === 'Wikiz' ? '1000+ download' : '100+ download'} />
         <ModernVisitButton url={product.website} color={product.color} />
+        {/* CarStage için partner badge */}
+        {product.name === 'CarStage' && (
+          <div className="mt-4 flex items-center justify-center">
+            <span className="px-6 py-2 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-base shadow backdrop-blur-md">20+ partner</span>
+          </div>
+        )}
       </div>
       {/* Açıklama */}
       <div className="mt-6 text-base md:text-lg text-white/80 leading-relaxed font-sans text-center max-w-xl mx-auto">
