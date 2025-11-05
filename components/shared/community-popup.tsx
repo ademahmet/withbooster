@@ -36,7 +36,6 @@ export function CommunityPopup({ open, onOpenChange }: CommunityPopupProps) {
     try {
       supabase = getSupabaseClient();
     } catch (error) {
-      console.error("Supabase client error", error);
       setStatus("error");
       setMessage("Supabase is not configured. Please try again later.");
       return;
@@ -61,7 +60,6 @@ export function CommunityPopup({ open, onOpenChange }: CommunityPopupProps) {
       setStatus("success");
       setMessage("Thanks for joining! We'll be in touch soon.");
     } catch (error) {
-      console.error("Community submission error", error);
       setStatus("error");
       setMessage("We couldn't submit your request. Please try again later.");
     } finally {

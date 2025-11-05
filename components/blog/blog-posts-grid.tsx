@@ -31,17 +31,17 @@ export function BlogPostsGrid() {
         className="flex items-center justify-between"
       >
         <div>
-          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
+          <h2 className="text-xl font-bold text-slate-900 sm:text-2xl md:text-3xl">
             Latest Posts
           </h2>
-          <p className="mt-2 text-sm text-slate-600">
+          <p className="mt-2 text-xs text-slate-600 sm:text-sm">
             Insights and updates from the withbooster team
           </p>
         </div>
       </motion.div>
 
       {/* Blog Posts Grid */}
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
         {blogPosts.map((post, index) => (
           <BlogPostCard key={post.id} post={post} index={index} />
         ))}
@@ -90,9 +90,9 @@ function BlogPostCard({ post, index }: { post: typeof blogPosts[number]; index: 
       </div>
 
       {/* Post Content */}
-      <div className="flex flex-1 flex-col items-center justify-center p-6">
+      <div className="flex flex-1 flex-col items-center justify-center p-4 sm:p-6">
         {/* Title */}
-        <h3 className="text-xl font-bold text-slate-600">
+        <h3 className="text-lg font-bold text-slate-600 sm:text-xl">
           {post.title}
         </h3>
       </div>

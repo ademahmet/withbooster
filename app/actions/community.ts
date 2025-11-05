@@ -25,7 +25,6 @@ export async function createCommunityMember(formData: FormData) {
   });
 
   if (error) {
-    console.error("Supabase insert error", error);
     return {
       ok: false,
       message: "We couldn't save your submission. Please try again soon.",

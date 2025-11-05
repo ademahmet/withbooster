@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 
 export function DigitalDesignsHeroSection() {
   return (
-    <section className="relative bg-gradient-to-b from-pink-50 via-purple-50/30 to-slate-50 py-20">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+    <section className="relative bg-gradient-to-b from-pink-50 via-purple-50/30 to-slate-50 py-12 sm:py-16 md:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="grid items-center gap-8 sm:gap-12 lg:grid-cols-2">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -23,7 +23,7 @@ export function DigitalDesignsHeroSection() {
             </span>
 
             {/* Heading */}
-            <h1 className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
+            <h1 className="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl">
               Beautiful{" "}
               <span className="bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Digital Designs
@@ -33,7 +33,7 @@ export function DigitalDesignsHeroSection() {
             </h1>
 
             {/* Description */}
-            <p className="text-lg leading-relaxed text-slate-600">
+            <p className="text-sm leading-relaxed text-slate-600 sm:text-base md:text-lg">
               We turn creativity into digital designs that reach thousands across the globe. 
               From customizable posters to special occasion templates, discover instant-access 
               digital products with high aesthetics and limitless creativity.
@@ -65,14 +65,14 @@ export function DigitalDesignsHeroSection() {
             <div className="flex flex-wrap gap-4">
               <Button
                 asChild
-                className="h-12 bg-gradient-to-r from-pink-600 to-purple-600 px-8 text-base font-semibold shadow-xl hover:from-pink-700 hover:to-purple-700"
+                className="h-12 w-full bg-gradient-to-r from-pink-600 to-purple-600 px-6 text-sm font-semibold shadow-xl hover:from-pink-700 hover:to-purple-700 sm:w-auto sm:px-8 sm:text-base"
               >
                 <a
                   href="https://www.etsy.com/shop/withbooster"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <ShoppingBag className="mr-2 h-5 w-5" />
+                  <ShoppingBag className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                   Visit Our Etsy Store
                 </a>
               </Button>

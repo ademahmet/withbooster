@@ -28,7 +28,7 @@ export function BoosterHeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl"
+          className="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl"
         >
           Welcome to{" "}
           <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
@@ -41,7 +41,7 @@ export function BoosterHeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mx-auto max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl"
+          className="mx-auto max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg md:text-xl"
         >
           We are redesigning business operations with AI.{" "}
           <strong>
@@ -55,15 +55,15 @@ export function BoosterHeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid grid-cols-2 gap-8 pt-8"
+          className="grid grid-cols-2 gap-6 pt-8 sm:gap-8"
         >
           <div className="flex flex-col items-center">
-            <div className="text-3xl font-bold text-primary sm:text-4xl">10x</div>
-            <div className="mt-1 text-sm text-slate-600">Faster Operations</div>
+            <div className="text-2xl font-bold text-primary sm:text-3xl md:text-4xl">10x</div>
+            <div className="mt-1 text-xs text-slate-600 sm:text-sm">Faster Operations</div>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-3xl font-bold text-primary sm:text-4xl">24/7</div>
-            <div className="mt-1 text-sm text-slate-600">AI Support</div>
+            <div className="text-2xl font-bold text-primary sm:text-3xl md:text-4xl">24/7</div>
+            <div className="mt-1 text-xs text-slate-600 sm:text-sm">AI Support</div>
           </div>
         </motion.div>
       </div>

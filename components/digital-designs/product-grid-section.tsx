@@ -42,12 +42,12 @@ export function ProductGridSection() {
         transition={{ duration: 0.6 }}
         className="flex flex-col gap-4"
       >
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+            <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">
               Our Products
             </h2>
-            <p className="mt-2 text-sm text-slate-600">
+            <p className="mt-2 text-xs text-slate-600 sm:text-sm">
               Browse our collection of high-quality digital designs
             </p>
           </div>
@@ -64,7 +64,7 @@ export function ProductGridSection() {
       </motion.div>
 
       {/* Product Grid */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
         {products.map((product, index) => (
           <ProductCard key={product.id} product={product} index={index} />
         ))}
@@ -124,9 +124,9 @@ function ProductCard({ product, index }: { product: typeof products[number]; ind
       </div>
 
       {/* Product Info */}
-      <div className="flex flex-1 flex-col p-4">
+      <div className="flex flex-1 flex-col p-3 sm:p-4">
         {/* Title */}
-        <h3 className="font-semibold text-slate-900 line-clamp-2 group-hover:text-pink-600">
+        <h3 className="text-sm font-semibold text-slate-900 line-clamp-2 group-hover:text-pink-600 sm:text-base">
           {product.title}
         </h3>
       </div>

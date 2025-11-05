@@ -57,7 +57,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 bg-clip-text text-4xl font-bold leading-[1.2] tracking-tight text-transparent sm:text-5xl md:text-6xl"
+          className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 bg-clip-text text-3xl font-bold leading-[1.2] tracking-tight text-transparent sm:text-4xl md:text-5xl lg:text-6xl"
         >
           Drive Your Future Forward with Our Booster Solutions
         </motion.h1>
@@ -67,7 +67,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="mx-auto max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg md:text-xl"
+          className="mx-auto max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base md:text-lg lg:text-xl"
         >
           Smarter workflows with AI, engaging web experiences, and creative products for the global marketplace.
         </motion.p>
@@ -77,11 +77,11 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex flex-col items-center justify-center gap-3 pt-2 sm:flex-row"
+          className="flex flex-col items-center justify-center gap-4 pt-2 sm:flex-row"
         >
           <Button
             asChild
-            className="group h-11 min-w-[180px] px-6 text-sm font-semibold shadow-lg shadow-primary/20 transition-all hover:shadow-xl hover:shadow-primary/25"
+            className="group h-12 w-full min-w-[200px] px-6 text-sm font-semibold shadow-lg shadow-primary/20 transition-all hover:shadow-xl hover:shadow-primary/25 sm:w-auto sm:h-11"
           >
             <Link href="#services">
               Explore Solutions
@@ -91,7 +91,7 @@ export function HeroSection() {
           <Button
             asChild
             variant="outline"
-            className="h-11 min-w-[180px] border-2 border-slate-300 px-6 text-sm font-semibold text-slate-700 hover:border-slate-400 hover:bg-slate-50"
+            className="h-12 w-full min-w-[200px] border-2 border-slate-300 px-6 text-sm font-semibold text-slate-700 hover:border-slate-400 hover:bg-slate-50 sm:w-auto sm:h-11"
           >
             <Link href="/booster-studio">Explore Booster Studio</Link>
           </Button>

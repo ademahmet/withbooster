@@ -53,17 +53,17 @@ export function ServicesSection() {
         transition={{ duration: 0.6 }}
         className="flex flex-col items-center gap-4 text-center"
       >
-        <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+        <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary sm:tracking-[0.3em]">
           <Sparkles className="h-3.5 w-3.5" />
           What We Lead
         </span>
-        <h2 className="text-4xl font-bold text-slate-900 sm:text-5xl">Our Services</h2>
-        <p className="max-w-2xl text-lg text-slate-600">
+        <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl md:text-5xl">Our Services</h2>
+        <p className="max-w-2xl text-sm text-slate-600 sm:text-base md:text-lg">
           Future-driven solutions in AI, entertainment technology, and digital design
         </p>
       </motion.div>
 
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => (
           <ServiceCard key={service.id} service={service} index={index} />
         ))}
@@ -101,10 +101,10 @@ function ServiceCard({
           </div>
 
           {/* Title */}
-          <h3 className="mb-4 text-2xl font-bold text-slate-900">{title}</h3>
+          <h3 className="mb-4 text-xl font-bold text-slate-900 sm:text-2xl">{title}</h3>
 
           {/* Description */}
-          <div className="mb-6 flex-1 text-sm leading-relaxed text-slate-600">
+          <div className="mb-6 flex-1 text-sm leading-relaxed text-slate-600 sm:text-base">
             {description}
           </div>
         </div>

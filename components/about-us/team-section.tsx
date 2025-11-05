@@ -49,18 +49,18 @@ export function TeamSection() {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6 }}
       >
-        <p className="text-xs font-medium uppercase tracking-[0.3em] text-slate-500">
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-slate-500 sm:tracking-[0.3em]">
           Leadership
         </p>
-        <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+        <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl md:text-4xl">
           The withbooster Team
         </h2>
-        <p className="mx-auto max-w-2xl text-sm text-slate-600">
+        <p className="mx-auto max-w-2xl text-xs text-slate-600 sm:text-sm">
           Visionaries engineering transformative experiences across AI, entertainment, and design.
         </p>
       </motion.div>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
         {team.map((member, index) => (
           <motion.article
             key={member.name}
@@ -68,7 +68,7 @@ export function TeamSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="group flex flex-col items-center gap-4 rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm transition-all hover:shadow-xl"
+            className="group flex flex-col items-center gap-4 rounded-3xl border border-slate-200 bg-white p-5 text-center shadow-sm transition-all hover:shadow-xl sm:p-6"
           >
             <div className="relative h-32 w-32 overflow-hidden rounded-full border-4 border-slate-100 bg-gradient-to-br from-primary/10 via-white to-white transition-transform group-hover:scale-105">
               <Image
@@ -80,8 +80,8 @@ export function TeamSection() {
               />
             </div>
             <div className="space-y-3">
-              <h3 className="text-lg font-semibold text-slate-900">{member.name}</h3>
-              <p className="text-sm font-medium text-primary">{member.role}</p>
+              <h3 className="text-base font-semibold text-slate-900 sm:text-lg">{member.name}</h3>
+              <p className="text-xs font-medium text-primary sm:text-sm">{member.role}</p>
               <p className="text-xs leading-relaxed text-slate-600">{member.bio}</p>
               
               {/* Contact Links */}

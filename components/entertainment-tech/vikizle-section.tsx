@@ -15,20 +15,20 @@ export function VikizleSection() {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6 }}
       >
-        <p className="text-xs font-medium uppercase tracking-[0.3em] text-slate-500">
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-slate-500 sm:tracking-[0.3em]">
           Live Product
         </p>
-        <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+        <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl md:text-4xl">
           Wikiz
         </h2>
-        <p className="mx-auto max-w-2xl text-sm text-slate-600">
+        <p className="mx-auto max-w-2xl text-xs text-slate-600 sm:text-sm">
           A revolutionary platform that connects content creators and viewers in real-time, 
           fostering meaningful interactions and building vibrant communities.
         </p>
       </motion.div>
 
       {/* Main Content Grid */}
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2">
         {/* Video Showcase */}
         <motion.div
           initial={{ opacity: 0, x: -24 }}
@@ -60,14 +60,14 @@ export function VikizleSection() {
           >
             <Button
               asChild
-              className="group h-14 px-8 text-base font-semibold shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
+              className="group h-12 w-full px-6 text-sm font-semibold shadow-xl transition-all hover:scale-105 hover:shadow-2xl sm:h-14 sm:w-auto sm:px-8 sm:text-base"
             >
               <a
                 href="https://wikizle.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <ExternalLink className="mr-2 h-5 w-5" />
+                <ExternalLink className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Test Wikizle Live
               </a>
             </Button>
@@ -83,11 +83,11 @@ export function VikizleSection() {
           className="order-1 space-y-8 lg:order-2"
         >
           {/* Product Description */}
-          <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-            <h3 className="mb-4 text-2xl font-bold text-slate-900">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <h3 className="mb-4 text-xl font-bold text-slate-900 sm:text-2xl">
               What is Wikiz?
             </h3>
-            <p className="mb-6 leading-relaxed text-slate-600">
+            <p className="mb-6 text-sm leading-relaxed text-slate-600 sm:text-base">
               Wikiz is an entertaining and educational game.
             </p>
             <ul className="space-y-3">
@@ -117,12 +117,12 @@ export function VikizleSection() {
           </div>
 
           {/* Live Metrics */}
-          <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-purple-50 to-pink-50 p-8 shadow-sm">
-            <h3 className="mb-6 flex items-center gap-2 text-xl font-bold text-slate-900">
-              <TrendingUp className="h-6 w-6 text-purple-600" />
+          <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-purple-50 to-pink-50 p-6 shadow-sm sm:p-8">
+            <h3 className="mb-6 flex items-center gap-2 text-lg font-bold text-slate-900 sm:text-xl">
+              <TrendingUp className="h-5 w-5 text-purple-600 sm:h-6 sm:w-6" />
               Live Metrics
             </h3>
-            <p className="text-center text-lg font-medium text-slate-600">Coming Soon</p>
+            <p className="text-center text-base font-medium text-slate-600 sm:text-lg">Coming Soon</p>
           </div>
         </motion.div>
       </div>

@@ -39,14 +39,14 @@ export function Navbar() {
             : "border-b border-transparent bg-transparent"
         }`}
       >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
           <Link href="/" className="group flex items-center gap-3 transition-transform hover:scale-105">
             <Image
               src="/withbooster_logo.svg"
               alt="withbooster"
               width={160}
               height={36}
-              className="h-9 w-auto"
+              className="h-7 w-auto sm:h-9"
             />
           </Link>
 
@@ -94,14 +94,15 @@ export function Navbar() {
               <span className="relative z-10">Blog</span>
               <span className="absolute inset-0 scale-0 rounded-full bg-slate-100 transition-transform group-hover:scale-100" />
             </Link>
-            <div className="ml-4 flex items-center gap-3">
+            <div className="ml-2 flex items-center gap-3 sm:ml-4">
               <Button
                 variant="outline"
-                className="group relative h-11 overflow-hidden border-2 border-primary px-6 text-sm font-semibold text-primary transition-all hover:bg-primary hover:text-white"
+                className="group relative h-10 overflow-hidden border-2 border-primary px-4 text-xs font-semibold text-primary transition-all hover:bg-primary hover:text-white sm:h-11 sm:px-6 sm:text-sm"
                 onClick={() => setIsCommunityOpen(true)}
               >
-                <Sparkles className="mr-2 h-4 w-4 transition-transform group-hover:rotate-12" />
-                Join Community
+                <Sparkles className="mr-1 h-3.5 w-3.5 transition-transform group-hover:rotate-12 sm:mr-2 sm:h-4 sm:w-4" />
+                <span className="hidden sm:inline">Join Community</span>
+                <span className="sm:hidden">Join</span>
               </Button>
             </div>
           </div>

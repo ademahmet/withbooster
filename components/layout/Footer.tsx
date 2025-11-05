@@ -4,20 +4,20 @@ import Image from "next/image";
 export function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-slate-50">
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-12 md:grid-cols-4">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4 md:gap-12">
           {/* Brand Section */}
-          <div className="space-y-4 md:col-span-2">
+          <div className="space-y-4 sm:col-span-2 md:col-span-2">
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/withbooster_logo.svg"
                 alt="withbooster"
                 width={140}
                 height={32}
-                className="h-8 w-auto"
+                className="h-7 w-auto sm:h-8"
               />
             </Link>
-            <p className="max-w-sm text-sm text-slate-600">
+            <p className="max-w-sm text-sm text-slate-600 sm:text-base">
               Transformative AI workflows, entertainment technology, and digital
               design experiences for future-driven brands.
             </p>
@@ -72,10 +72,10 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="mailto:contact@withbooster.com"
+                  href="mailto:info.withbooster@gmail.com"
                   className="text-sm text-slate-600 transition hover:text-slate-900"
                 >
-                  contact@withbooster.com
+                  info.withbooster@gmail.com
                 </a>
               </li>
             </ul>
@@ -83,20 +83,20 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-8 md:flex-row">
-          <p className="text-sm text-slate-500">
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-6 sm:mt-12 sm:pt-8 md:flex-row">
+          <p className="text-xs text-slate-500 sm:text-sm">
             © {new Date().getFullYear()} withbooster. All rights reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <Link
               href="/privacy"
-              className="text-sm text-slate-500 transition hover:text-slate-900"
+              className="text-xs text-slate-500 transition hover:text-slate-900 sm:text-sm"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-sm text-slate-500 transition hover:text-slate-900"
+              className="text-xs text-slate-500 transition hover:text-slate-900 sm:text-sm"
             >
               Terms of Service
             </Link>

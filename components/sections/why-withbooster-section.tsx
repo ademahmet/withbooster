@@ -34,15 +34,15 @@ export function WhyWithboosterSection() {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+        <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl md:text-4xl">
           Why us?
         </h2>
-        <p className="mx-auto max-w-2xl text-sm text-slate-600">
+        <p className="mx-auto max-w-2xl text-xs text-slate-600 sm:text-sm">
           We are a technology studio that combines artificial intelligence, digital innovation, 
           and creative design to help businesses scale, engage audiences, and compete globally.
         </p>
       </motion.div>
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, index) => (
           <FeatureCard key={feature.title} feature={feature} index={index} />
         ))}
@@ -66,13 +66,13 @@ function FeatureCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm transition-all hover:shadow-xl hover:border-primary/20"
+      className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-primary/20 hover:shadow-xl sm:rounded-[28px] sm:p-8"
     >
-      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-purple-50 text-primary transition-transform group-hover:scale-110">
-        <Icon className="h-7 w-7" />
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-purple-50 text-primary transition-transform group-hover:scale-110 sm:h-14 sm:w-14">
+        <Icon className="h-6 w-6 sm:h-7 sm:w-7" />
       </div>
-      <h3 className="mt-6 text-xl font-semibold text-slate-900">{feature.title}</h3>
-      <p className="mt-4 text-sm leading-relaxed text-slate-600">{feature.description}</p>
+      <h3 className="mt-5 text-lg font-semibold text-slate-900 sm:mt-6 sm:text-xl">{feature.title}</h3>
+      <p className="mt-3 text-xs leading-relaxed text-slate-600 sm:mt-4 sm:text-sm">{feature.description}</p>
     </motion.article>
   );
 }

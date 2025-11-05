@@ -46,7 +46,7 @@ export function BoosterCTASection() {
             asChild
             className="group h-14 min-w-[200px] border-2 border-white bg-white px-8 text-base font-semibold text-primary shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
           >
-            <a href="mailto:info@withbooster.com">
+            <a href="mailto:info.withbooster@gmail.com">
               <Play className="mr-2 h-5 w-5" />
               Request Demo
             </a>
