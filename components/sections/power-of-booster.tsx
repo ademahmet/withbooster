@@ -28,16 +28,13 @@ export function PowerOfBoosterSection() {
   return (
     <section className="space-y-12">
       <motion.div
-        className="flex flex-col gap-3"
+        className="flex flex-col gap-4 text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6 }}
       >
-        <p className="text-xs font-medium uppercase tracking-[0.3em] text-white/50">
-          Why Withbooster
-        </p>
-        <h2 className="text-3xl font-semibold sm:text-4xl">
+        <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
           The Power of withbooster
         </h2>
       </motion.div>
@@ -65,13 +62,13 @@ function ValueCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="rounded-[28px] border border-white/10 bg-white/5 p-8"
+      className="rounded-[28px] border border-slate-200 bg-white p-8 shadow-md hover:shadow-lg transition-shadow"
     >
-      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/20 text-white">
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
         <Icon className="h-6 w-6" />
       </div>
-      <h3 className="mt-6 text-xl font-semibold">{value.title}</h3>
-      <p className="mt-4 text-sm text-white/70">{value.description}</p>
+      <h3 className="mt-6 text-xl font-semibold text-slate-900">{value.title}</h3>
+      <p className="mt-4 text-sm text-slate-600">{value.description}</p>
     </motion.article>
   );
 }

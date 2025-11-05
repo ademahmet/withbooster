@@ -25,13 +25,13 @@ const team = [
 
 export function TeamSection() {
   return (
-    <section className="space-y-12">
+    <section id="about" className="space-y-12">
       <div className="flex flex-col items-center gap-4 text-center">
-        <p className="text-xs font-medium uppercase tracking-[0.3em] text-white/50">
-          Our Team
+        <p className="text-xs font-medium uppercase tracking-[0.3em] text-slate-500">
+          About Us
         </p>
-        <h2 className="text-3xl font-semibold sm:text-4xl">Meet the Founding Team</h2>
-        <p className="max-w-2xl text-sm text-white/70">
+        <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">Meet the Founding Team</h2>
+        <p className="max-w-2xl text-sm text-slate-600">
           Visionaries engineering transformative experiences across AI, entertainment, and design.
         </p>
       </div>
@@ -39,9 +39,9 @@ export function TeamSection() {
         {team.map((member) => (
           <article
             key={member.name}
-            className="flex flex-col items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-8 text-center shadow-lg backdrop-blur"
+            className="flex flex-col items-center gap-4 rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-md hover:shadow-xl transition-shadow"
           >
-            <div className="relative h-32 w-32 overflow-hidden rounded-full border border-white/10 bg-gradient-to-br from-primary/40 via-primary/10 to-transparent">
+            <div className="relative h-32 w-32 overflow-hidden rounded-full border-4 border-slate-100 bg-gradient-to-br from-primary/10 via-white to-white">
               <Image
                 src={member.image}
                 alt={member.name}
@@ -51,8 +51,8 @@ export function TeamSection() {
               />
             </div>
             <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-white">{member.name}</h3>
-              <p className="text-sm text-white/70">{member.role}</p>
+              <h3 className="text-lg font-semibold text-slate-900">{member.name}</h3>
+              <p className="text-sm text-slate-600">{member.role}</p>
             </div>
           </article>
         ))}

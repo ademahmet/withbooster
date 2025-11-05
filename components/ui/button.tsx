@@ -20,18 +20,18 @@ export interface ButtonProps
 
 const variantStyles: Record<ButtonVariant, string> = {
   default:
-    "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-primary/40",
+    "bg-primary text-white hover:bg-primary/90 focus-visible:ring-primary/40",
   secondary:
-    "bg-transparent text-white border border-white/20 hover:border-white/40 hover:bg-white/5",
+    "bg-slate-100 text-slate-900 border border-slate-200 hover:bg-slate-200 hover:border-slate-300",
   ghost:
-    "bg-transparent text-white hover:bg-white/10 focus-visible:ring-white/20",
+    "bg-transparent text-slate-700 hover:bg-slate-100 focus-visible:ring-slate-200",
   outline:
-    "border border-accent text-accent hover:bg-accent/10 focus-visible:ring-accent/30",
-  link: "text-accent underline-offset-4 hover:underline",
+    "border-2 border-slate-300 text-slate-700 hover:bg-slate-50 focus-visible:ring-slate-300",
+  link: "text-primary underline-offset-4 hover:underline",
 };
 
 const baseStyles =
-  "inline-flex items-center justify-center rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black disabled:pointer-events-none disabled:opacity-60";
+  "inline-flex items-center justify-center rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:pointer-events-none disabled:opacity-60";
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "default", asChild = false, ...props }, ref) => {

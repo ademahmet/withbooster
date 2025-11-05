@@ -22,7 +22,7 @@ export function ContactForm() {
   return (
     <form
       ref={formRef}
-      className="mx-auto max-w-4xl space-y-8 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm sm:p-10"
+      className="mx-auto max-w-4xl space-y-8 rounded-3xl border border-slate-200 bg-white p-8 shadow-lg sm:p-10"
       action={formAction}
     >
       <div className="grid gap-6 md:grid-cols-2">
@@ -51,7 +51,7 @@ export function ContactForm() {
         />
       </div>
       {state.message && (
-        <p className={state.ok ? "text-center text-sm text-[#8bf5b0]" : "text-center text-sm text-[#ff9b9b]"}>{state.message}</p>
+        <p className={state.ok ? "text-center text-sm text-green-600 font-medium" : "text-center text-sm text-red-600 font-medium"}>{state.message}</p>
       )}
       <div className="flex justify-center">
         <SubmitButton />
@@ -64,7 +64,11 @@ function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
-    <Button type="submit" className="min-w-[200px] px-8" disabled={pending}>
+    <Button 
+      type="submit" 
+      className="min-w-[200px] rounded-lg bg-[#2d13aa] px-8 text-white shadow-lg transition-all hover:bg-opacity-90 hover:scale-105 hover:shadow-xl" 
+      disabled={pending}
+    >
       {pending ? "Sending..." : "Send Message"}
     </Button>
   );

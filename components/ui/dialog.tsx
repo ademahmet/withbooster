@@ -15,7 +15,7 @@ const DialogOverlay = ({
 }: DialogPrimitive.DialogOverlayProps) => (
   <DialogPrimitive.Overlay
     className={cn(
-      "fixed inset-0 z-50 bg-black/70 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      "fixed inset-0 z-50 bg-black/50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
       className,
     )}
     {...props}
@@ -33,7 +33,7 @@ const DialogContent = ({
     <DialogOverlay />
     <DialogPrimitive.Content
       className={cn(
-        "fixed left-1/2 top-1/2 z-50 grid w-[min(90vw,480px)] translate-x-[-50%] translate-y-[-50%] gap-6 rounded-3xl border border-white/10 bg-[#090909] px-8 py-10 text-white shadow-2xl outline-none data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
+        "fixed left-1/2 top-1/2 z-50 grid w-[min(90vw,480px)] translate-x-[-50%] translate-y-[-50%] gap-6 rounded-3xl border border-slate-200 bg-white px-8 py-10 text-slate-900 shadow-2xl outline-none data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
         className,
       )}
       {...props}
@@ -55,6 +55,8 @@ const DialogHeader = ({
   />
 );
 
+DialogHeader.displayName = "DialogHeader";
+
 const DialogTitle = ({
   className,
   ...props
@@ -65,12 +67,14 @@ const DialogTitle = ({
   />
 );
 
+DialogTitle.displayName = DialogPrimitive.Title.displayName;
+
 const DialogDescription = ({
   className,
   ...props
 }: DialogPrimitive.DialogDescriptionProps) => (
   <DialogPrimitive.Description
-    className={cn("text-sm text-white/70", className)}
+    className={cn("text-sm text-slate-600", className)}
     {...props}
   />
 );
@@ -83,6 +87,8 @@ const DialogFooter = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div className={cn("flex flex-col gap-2 sm:flex-row sm:justify-end", className)} {...props} />
 );
+
+DialogFooter.displayName = "DialogFooter";
 
 export {
   Dialog,

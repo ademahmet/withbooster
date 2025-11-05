@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-black">
+    <footer className="border-t border-slate-200 bg-slate-50">
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-12 md:grid-cols-4">
           {/* Brand Section */}
@@ -17,7 +17,7 @@ export function Footer() {
                 className="h-8 w-auto"
               />
             </Link>
-            <p className="max-w-sm text-sm text-white/60">
+            <p className="max-w-sm text-sm text-slate-600">
               Transformative AI workflows, entertainment technology, and digital
               design experiences for future-driven brands.
             </p>
@@ -25,32 +25,40 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900">
               Quick Links
             </h3>
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#ai-studio"
-                  className="text-sm text-white/60 transition hover:text-white"
+                  href="#booster-studio"
+                  className="text-sm text-slate-600 transition hover:text-slate-900"
                 >
-                  AI Studio
+                  Booster Studio
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#services"
-                  className="text-sm text-white/60 transition hover:text-white"
+                  href="#entertainment-tech"
+                  className="text-sm text-slate-600 transition hover:text-slate-900"
                 >
-                  Our Ventures
+                  Entertainment Tech
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#team"
-                  className="text-sm text-white/60 transition hover:text-white"
+                  href="#digital-designs"
+                  className="text-sm text-slate-600 transition hover:text-slate-900"
                 >
-                  Team
+                  Digital Designs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#about"
+                  className="text-sm text-slate-600 transition hover:text-slate-900"
+                >
+                  About Us
                 </Link>
               </li>
             </ul>
@@ -58,14 +66,14 @@ export function Footer() {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900">
               Contact
             </h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="mailto:contact@withbooster.com"
-                  className="text-sm text-white/60 transition hover:text-white"
+                  className="text-sm text-slate-600 transition hover:text-slate-900"
                 >
                   contact@withbooster.com
                 </a>
@@ -75,20 +83,20 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
-          <p className="text-sm text-white/50">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-8 md:flex-row">
+          <p className="text-sm text-slate-500">
             © {new Date().getFullYear()} withbooster. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link
               href="/privacy"
-              className="text-sm text-white/50 transition hover:text-white"
+              className="text-sm text-slate-500 transition hover:text-slate-900"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-sm text-white/50 transition hover:text-white"
+              className="text-sm text-slate-500 transition hover:text-slate-900"
             >
               Terms of Service
             </Link>

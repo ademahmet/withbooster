@@ -104,8 +104,8 @@ export function CommunityPopup({ open, onOpenChange }: CommunityPopupProps) {
             <p
               className={
                 status === "success"
-                  ? "text-center text-sm text-[#8bf5b0]"
-                  : "text-center text-sm text-[#ff9b9b]"
+                  ? "text-center text-sm text-green-600 font-medium"
+                  : "text-center text-sm text-red-600 font-medium"
               }
             >
               {message}
