@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Linkedin, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -64,7 +65,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact & Social */}
           <div className="space-y-4">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900">
               Contact
@@ -79,6 +80,33 @@ export function Footer() {
                 </a>
               </li>
             </ul>
+            
+            {/* Social Media */}
+            <div className="pt-2">
+              <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-900">
+                Follow Us
+              </h4>
+              <div className="flex gap-3">
+                <a
+                  href="https://www.linkedin.com/company/withbooster"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-200 text-slate-600 transition-all hover:bg-[#0077B5] hover:text-white hover:scale-110"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://www.instagram.com/withbooster"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-200 text-slate-600 transition-all hover:bg-gradient-to-tr hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 hover:text-white hover:scale-110"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
