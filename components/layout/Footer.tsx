@@ -32,7 +32,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#booster-studio"
+                  href="/booster-studio"
                   className="text-sm text-slate-600 transition hover:text-slate-900"
                 >
                   Booster Studio
@@ -40,7 +40,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#entertainment-tech"
+                  href="/entertainment-tech"
                   className="text-sm text-slate-600 transition hover:text-slate-900"
                 >
                   Entertainment Tech
@@ -48,7 +48,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#digital-designs"
+                  href="/digital-designs"
                   className="text-sm text-slate-600 transition hover:text-slate-900"
                 >
                   Digital Designs
@@ -56,10 +56,18 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#about"
+                  href="/about-us"
                   className="text-sm text-slate-600 transition hover:text-slate-900"
                 >
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-sm text-slate-600 transition hover:text-slate-900"
+                >
+                  Blog
                 </Link>
               </li>
             </ul>
